@@ -290,6 +290,100 @@
         </div>
     </section>
 
+    <!-- WAITLIST Section -->
+    <section class="py-24 bg-gradient-to-br from-blue-900/20 via-premium-dark to-premium-dark relative overflow-hidden border-y border-blue-500/20">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-block mb-4 px-6 py-3 rounded-full glass-card border-2 border-blue-500/30">
+                    <span class="text-blue-400 font-bold text-lg">🚀 ACCESO ANTICIPADO</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    Únete a la <span class="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Lista VIP</span>
+                </h2>
+
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Sé de los primeros en recibir <strong class="text-blue-400">nuevos episodios, descuentos exclusivos</strong> y contenido premium antes que nadie.
+                </p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-10 md:p-12 text-center border-2 border-blue-500/30 hover-lift">
+                <div class="mb-8">
+                    <div class="text-6xl mb-4">📬</div>
+                    <h3 class="text-3xl font-bold mb-3">Waitlist Premium</h3>
+                    <p class="text-gray-400 text-lg mb-8">Regístrate gratis y obtén beneficios exclusivos</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="text-2xl mb-2">🎁</div>
+                            <div class="text-sm font-semibold text-blue-400 mb-1">Descuentos Early Bird</div>
+                            <div class="text-xs text-gray-400">Hasta 50% OFF</div>
+                        </div>
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="text-2xl mb-2">⚡</div>
+                            <div class="text-sm font-semibold text-blue-400 mb-1">Acceso Anticipado</div>
+                            <div class="text-xs text-gray-400">Nuevos episodios primero</div>
+                        </div>
+                        <div class="glass-card rounded-xl p-4">
+                            <div class="text-2xl mb-2">💎</div>
+                            <div class="text-sm font-semibold text-blue-400 mb-1">Contenido Exclusivo</div>
+                            <div class="text-xs text-gray-400">Solo para suscriptores</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Form Embed (Emmanuel puede reemplazar con su form) -->
+                <div class="max-w-md mx-auto">
+                    <!-- Opción 1: Formspree (funcional inmediatamente) -->
+                    <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="tu@email.com"
+                            required
+                            class="w-full px-6 py-4 bg-premium-darker/80 border-2 border-premium-accent/30 rounded-xl text-white placeholder-gray-500 focus:border-premium-accent focus:outline-none transition-all text-lg"
+                        >
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Tu nombre (opcional)"
+                            class="w-full px-6 py-4 bg-premium-darker/80 border-2 border-premium-accent/30 rounded-xl text-white placeholder-gray-500 focus:border-premium-accent focus:outline-none transition-all"
+                        >
+                        <button
+                            type="submit"
+                            class="w-full px-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-600 hover:from-blue-600 hover:to-cyan-700 text-white font-bold text-xl rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+                        >
+                            ✨ Unirme a la Lista VIP
+                        </button>
+                    </form>
+
+                    <!-- Opción 2: Google Form embed (comentado, Emmanuel puede descomentar) -->
+                    <!--
+                    <iframe
+                        src="TU_GOOGLE_FORM_EMBED_URL_AQUI"
+                        width="100%"
+                        height="400"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0"
+                        class="rounded-xl"
+                    >Cargando…</iframe>
+                    -->
+                </div>
+
+                <p class="text-sm text-gray-400 mt-6 max-w-md mx-auto">
+                    ✅ Sin spam • Solo contenido de valor • Cancela cuando quieras
+                </p>
+
+                <div id="form-success" class="hidden mt-6 p-4 bg-green-500/20 border border-green-500/50 rounded-xl">
+                    <p class="text-green-400 font-semibold">🎉 ¡Bienvenido a la lista VIP! Revisa tu email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FREE SAMPLE Section -->
     <section class="py-24 bg-gradient-to-br from-green-900/20 via-premium-dark to-premium-dark relative overflow-hidden border-y border-green-500/20">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_50%)]"></div>
@@ -670,7 +764,7 @@
         </div>
     </footer>
 
-    <!-- PayPal Success/Cancel Handler -->
+    <!-- PayPal Success/Cancel Handler + Waitlist Form -->
     <script>
         // Check for PayPal return params
         const urlParams = new URLSearchParams(window.location.search);
@@ -695,6 +789,51 @@
                 }
             });
         });
+
+        // Waitlist form handler
+        const waitlistForm = document.getElementById('waitlist-form');
+        if (waitlistForm) {
+            waitlistForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(this);
+                const email = formData.get('email');
+                const name = formData.get('name');
+
+                try {
+                    // Option 1: Send to Formspree (replace YOUR_FORM_ID)
+                    // const response = await fetch(this.action, {
+                    //     method: 'POST',
+                    //     body: formData,
+                    //     headers: { 'Accept': 'application/json' }
+                    // });
+
+                    // Option 2: Send to Google Sheets via Apps Script
+                    // Emmanuel: crea un Google Apps Script y pega el URL aquí
+                    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, name, timestamp: new Date().toISOString() })
+                    });
+
+                    // Show success message
+                    document.getElementById('form-success').classList.remove('hidden');
+                    this.reset();
+
+                    // Hide after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('form-success').classList.add('hidden');
+                    }, 5000);
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Hubo un error al enviar tu email. Por favor intenta de nuevo.');
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -21,6 +21,39 @@ Esta página está desplegada en GitHub Pages:
 
 ## ⚙️ Configuración
 
+### Configurar Waitlist (Captura de Emails)
+
+**Opción 1: Google Forms (Recomendado)**
+1. Ve a https://forms.google.com y crea un nuevo formulario
+2. Agrega campo "Email" y "Nombre (opcional)"
+3. Click en "Enviar" → pestaña "< >" (Embed)
+4. Copia el iframe embed code
+5. En `index.html`, busca `<!-- Opción 2: Google Form embed -->`
+6. Reemplaza `TU_GOOGLE_FORM_EMBED_URL_AQUI` con tu URL
+7. Descomenta esa sección y comenta la Opción 1
+
+**Opción 2: Formspree (Más fácil)**
+1. Ve a https://formspree.io (gratis, sin registro)
+2. Crea una cuenta y un nuevo form
+3. Copia tu Form ID
+4. En `index.html`, busca `action="https://formspree.io/f/YOUR_FORM_ID"`
+5. Reemplaza `YOUR_FORM_ID` con tu ID de Formspree
+
+**Opción 3: Google Sheets via Apps Script**
+1. Crea una Google Sheet nueva
+2. Extensions → Apps Script
+3. Pega este código:
+```javascript
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const data = JSON.parse(e.postData.contents);
+  sheet.appendRow([data.timestamp, data.email, data.name]);
+  return ContentService.createTextOutput(JSON.stringify({result: "success"}));
+}
+```
+4. Deploy → New deployment → Web app → Deploy
+5. Copia el URL y pégalo en `GOOGLE_SCRIPT_URL` en `index.html`
+
 ### Agregar Stripe Payment Link
 
 1. Crea tu Payment Link en Stripe Dashboard
