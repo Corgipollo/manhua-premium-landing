@@ -145,11 +145,21 @@
                     </div>
                 </div>
 
-                <!-- CTA Button - PLACEHOLDER PARA STRIPE -->
+                <!-- PayPal Button -->
                 <div class="mb-4">
-                    <a href="#" id="stripe-cta" class="inline-block px-10 py-5 bg-gradient-to-r from-premium-accent to-premium-accent-dark hover:from-premium-accent-dark hover:to-premium-accent text-premium-darker font-bold text-lg rounded-xl shadow-2xl hover:shadow-premium-accent/50 transition-all duration-300 hover:scale-105">
-                        🔥 Obtener Acceso Ahora - $4.99 USD
-                    </a>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="inline-block">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="emmanuelpedrazavega6@gmail.com">
+                        <input type="hidden" name="item_name" value="Pack Premium Manhua Narrado - 100+ Episodios">
+                        <input type="hidden" name="amount" value="4.99">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="return" value="https://corgipollo.github.io/manhua-premium-landing/?success=true">
+                        <input type="hidden" name="cancel_return" value="https://corgipollo.github.io/manhua-premium-landing/?canceled=true">
+                        <input type="hidden" name="notify_url" value="">
+                        <button type="submit" class="px-10 py-5 bg-gradient-to-r from-premium-accent to-premium-accent-dark hover:from-premium-accent-dark hover:to-premium-accent text-premium-darker font-bold text-lg rounded-xl shadow-2xl hover:shadow-premium-accent/50 transition-all duration-300 hover:scale-105 cursor-pointer">
+                            🔥 Obtener Acceso Ahora - $4.99 USD
+                        </button>
+                    </form>
                 </div>
                 <p class="text-sm text-gray-400">Pago único • Acceso instantáneo • Descarga ilimitada</p>
 
@@ -457,13 +467,22 @@
                     </div>
                 </div>
 
-                <!-- CTA Button - PLACEHOLDER PARA STRIPE -->
-                <a href="#" id="stripe-cta-pricing" class="inline-block w-full max-w-md px-10 py-6 bg-gradient-to-r from-premium-accent to-premium-accent-dark hover:from-premium-accent-dark hover:to-premium-accent text-premium-darker font-bold text-xl rounded-2xl shadow-2xl hover:shadow-premium-accent/50 transition-all duration-300 hover:scale-105">
-                    🚀 Comprar Ahora - Solo $4.99
-                </a>
+                <!-- PayPal Button -->
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="inline-block w-full max-w-md">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="emmanuelpedrazavega6@gmail.com">
+                    <input type="hidden" name="item_name" value="Pack Premium Manhua Narrado - 100+ Episodios">
+                    <input type="hidden" name="amount" value="4.99">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="return" value="https://corgipollo.github.io/manhua-premium-landing/?success=true">
+                    <input type="hidden" name="cancel_return" value="https://corgipollo.github.io/manhua-premium-landing/?canceled=true">
+                    <button type="submit" class="w-full px-10 py-6 bg-gradient-to-r from-premium-accent to-premium-accent-dark hover:from-premium-accent-dark hover:to-premium-accent text-premium-darker font-bold text-xl rounded-2xl shadow-2xl hover:shadow-premium-accent/50 transition-all duration-300 hover:scale-105 cursor-pointer">
+                        🚀 Comprar Ahora - Solo $4.99
+                    </button>
+                </form>
 
                 <p class="text-sm text-gray-400 mt-6">
-                    🔒 Pago 100% seguro procesado por Stripe • Entrega automática inmediata
+                    🔒 Pago 100% seguro procesado por PayPal • Entrega automática inmediata
                 </p>
             </div>
 
@@ -571,7 +590,7 @@
                         </svg>
                     </summary>
                     <p class="mt-4 text-gray-400 leading-relaxed">
-                        Totalmente seguro. Todos los pagos son procesados por Stripe, la plataforma de pagos más confiable
+                        Totalmente seguro. Todos los pagos son procesados por PayPal, la plataforma de pagos más confiable
                         del mundo, con encriptación de grado bancario. No almacenamos ningún dato de tu tarjeta.
                     </p>
                 </details>
@@ -607,10 +626,19 @@
                 Únete a cientos de fans que ya están disfrutando de manhuas narrados sin límites
             </p>
 
-            <!-- Final CTA - PLACEHOLDER PARA STRIPE -->
-            <a href="#" id="stripe-cta-final" class="inline-block px-12 py-6 bg-gradient-to-r from-premium-accent to-premium-accent-dark hover:from-premium-accent-dark hover:to-premium-accent text-premium-darker font-bold text-2xl rounded-2xl shadow-2xl hover:shadow-premium-accent/50 transition-all duration-300 hover:scale-105 mb-6">
-                💎 Obtener Acceso Premium - $4.99
-            </a>
+            <!-- PayPal Button -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="inline-block mb-6">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="emmanuelpedrazavega6@gmail.com">
+                <input type="hidden" name="item_name" value="Pack Premium Manhua Narrado - 100+ Episodios">
+                <input type="hidden" name="amount" value="4.99">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="https://corgipollo.github.io/manhua-premium-landing/?success=true">
+                <input type="hidden" name="cancel_return" value="https://corgipollo.github.io/manhua-premium-landing/?canceled=true">
+                <button type="submit" class="px-12 py-6 bg-gradient-to-r from-premium-accent to-premium-accent-dark hover:from-premium-accent-dark hover:to-premium-accent text-premium-darker font-bold text-2xl rounded-2xl shadow-2xl hover:shadow-premium-accent/50 transition-all duration-300 hover:scale-105 cursor-pointer">
+                    💎 Obtener Acceso Premium - $4.99
+                </button>
+            </form>
 
             <p class="text-gray-400">
                 ⚡ Entrega instantánea • 🔒 Pago 100% seguro • ♾️ Acceso de por vida
@@ -642,15 +670,18 @@
         </div>
     </footer>
 
-    <!-- SCRIPT PARA REEMPLAZAR CON STRIPE PAYMENT LINK -->
+    <!-- PayPal Success/Cancel Handler -->
     <script>
-        // ⚠️ EMMANUEL: REEMPLAZA ESTA URL CON TU STRIPE PAYMENT LINK ⚠️
-        const STRIPE_PAYMENT_LINK = 'TU_STRIPE_PAYMENT_LINK_AQUI';
+        // Check for PayPal return params
+        const urlParams = new URLSearchParams(window.location.search);
 
-        // Asignar el link a todos los CTAs
-        document.getElementById('stripe-cta').href = STRIPE_PAYMENT_LINK;
-        document.getElementById('stripe-cta-pricing').href = STRIPE_PAYMENT_LINK;
-        document.getElementById('stripe-cta-final').href = STRIPE_PAYMENT_LINK;
+        if (urlParams.get('success') === 'true') {
+            // Payment successful - show success message
+            alert('¡Pago completado! Recibirás un email con el enlace de descarga en los próximos minutos.');
+        } else if (urlParams.get('canceled') === 'true') {
+            // Payment canceled
+            alert('Pago cancelado. Si tienes alguna duda, contáctanos.');
+        }
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
